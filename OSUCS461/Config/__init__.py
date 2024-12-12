@@ -59,5 +59,5 @@ MySQL = {
 	}
 }[env]
 
-print(f"host: {os.getenv("DB_HOST", "default_host")}")
-print(f"host: {int(os.getenv("DB_PORT", 3306))}")
+print("host:" + os.getenv("DB_HOST", "default_host"))
+print("host" + int(os.getenv("DB_PORT", 3306)))
