@@ -58,3 +58,6 @@ MySQL = {
  		'db': os.getenv("DB_NAME", 'osucs461')
 	}
 }[env]
+
+print(f"host: {os.getenv("DB_HOST", "default_host")}")
+print(f"host: {int(os.getenv("DB_PORT", 3306))}")
