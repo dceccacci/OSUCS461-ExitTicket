@@ -1,6 +1,6 @@
 
 .DS_Store
 *.pyc
-OSUCS461/Config/__init__.py
+#OSUCS461/Config/__init__.py
 /env
 *.log
