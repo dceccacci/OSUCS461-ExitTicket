@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 env = "prod"
 API_VERSION = 'v1'
@@ -13,7 +13,7 @@ FRONTEND = 'osucapstone.com'
 class BaseConfig:
     reload: bool = True
     use_colors: bool = True
-    port: int = 8855
+    port: int = int(os.getenv("PORT", 8855)),
 
 @dataclass
 class LocalConfig(BaseConfig):
@@ -58,6 +58,3 @@ MySQL = {
  		'db': os.getenv("DB_NAME", 'osucs461')
 	}
 }[env]
-
-print("host:" + os.getenv("DB_HOST", "default_host"))
-print("port" + os.getenv("DB_PORT", 3306))
