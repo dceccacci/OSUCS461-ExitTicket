@@ -11,9 +11,9 @@ def set_pth():
 
 	# Step 1: Get the absolute path of the current project
 	project_root = os.path.abspath(os.path.dirname(__file__))
-
+	project_root.replace('\\', '\\\\')
 	# Define the content for the .pth file dynamically
-	pth_content = f"import site;site.addsitedir('{project_root}', set());\n"
+	pth_content = f"import site;site.addsitedir(r'{project_root}', set());\n"
 
 	# Step 2: Write the .pth file to the site-packages directory
 	# Get the site-packages directories
