@@ -4,3 +4,4 @@
 #OSUCS461/Config/__init__.py
 /env
 *.log
+.env
