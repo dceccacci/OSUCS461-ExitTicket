@@ -48,10 +48,10 @@ MySQL = {
  		'db' : 'osucs461'
 	},
 	'prod' : {
-		'host' : os.getenv("DB_HOST", "default_host"),
-		'port' : int(os.getenv("DB_PORT", 3306)),
-		"user": os.getenv("DB_USER", "default_user"),
-        "passwd": os.getenv("DB_PASSWORD", "default_passwd"),
- 		'db' : os.getenv("DB_NAME", 'osucs461')
+		'host' : os.environ.get("DB_HOST"),
+		'port' : int(os.environ.get("DB_PORT")),
+		"user": os.environ.get("DB_USER"),
+        "passwd": os.environ.get("DB_PASSWORD"),
+ 		'db' : os.environ.get("DB_NAME")
 	}
 }[env]
