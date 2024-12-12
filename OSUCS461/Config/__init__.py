@@ -25,7 +25,7 @@ class StagingConfig(BaseConfig):
 
 @dataclass
 class ProdConfig(BaseConfig):
-    host: str = os.getenv("DB_HOST", "default_host")
+    host: str = "0.0.0.0"
 
 configs = {
     "local" : LocalConfig(),
