@@ -13,7 +13,7 @@ FRONTEND = 'ceccaccd.pythonanywhere.com'
 class BaseConfig:
     reload: bool = True
     use_colors: bool = True
-    port: int = int(os.environ.get("API_PORT"))
+    port: int = int(os.getenv("PORT", 8000))
 
 @dataclass
 class LocalConfig(BaseConfig):
@@ -25,7 +25,7 @@ class StagingConfig(BaseConfig):
 
 @dataclass
 class ProdConfig(BaseConfig):
-    host: str = os.environ.get("API_HOST")
+    host: str = os.getenv("HOST", "0.0.0.0")
     
 
 configs = {
@@ -52,10 +52,10 @@ MySQL = {
  		'db' : 'osucs461'
 	},
 	'prod' : {
-		'host': os.environ.get("DB_HOST"),
-		'port': int(os.environ.get("DB_PORT")),
-		"user": os.environ.get("DB_USER"),
-        "passwd": os.environ.get("DB_PASSWORD"),
- 		'db': os.environ.get("DB_NAME")
+		'host': os.getenv("DB_HOST", "35.233.244.43"),
+		'port': int(os.getenv("DB_PORT", 3306)),
+		"user": os.getenv("DB_USER", "root"),
+        "passwd": os.getenv("DB_PASSWORD"),
+ 		'db': os.getenv("DB_NAME", "osucs461")
 	}
 }[env]
