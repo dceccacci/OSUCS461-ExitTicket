@@ -64,7 +64,4 @@ app.include_router(router)
 use_route_names_as_operation_ids(app)
 
 if __name__ == "__main__":
- 	uvicorn.run("main:app", host="0.0.0.0")
-
-# if __name__ == "__main__":
-# 	uvicorn.run("main:app", **FASTAPI_CONFIG.__dict__)
+	uvicorn.run("main:app", **FASTAPI_CONFIG.__dict__)
