@@ -12,6 +12,8 @@ def log_error(message):
 
 log_error(os.environ.get("DB_HOST"))
 log_error(int(os.environ.get("DB_PORT")))
+log_error(int(os.environ.get("PORT")))
+log_error(int(os.environ.get("HOST")))
 # ---------------------
 
 DB = MySQL(**DatabaseConfig)
