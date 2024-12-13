@@ -6,7 +6,7 @@ load_dotenv()
 
 env = "prod"
 API_VERSION = 'v1'
-SERVER = 'ceccaccd.mysql.pythonanywhere-services.com
+SERVER = 'ceccaccd.mysql.pythonanywhere-services.com'
 FRONTEND = 'ceccaccd.pythonanywhere.com'
 
 @dataclass(repr=False)
@@ -25,7 +25,8 @@ class StagingConfig(BaseConfig):
 
 @dataclass
 class ProdConfig(BaseConfig):
-    host: str = os.environ.get("API_HOST"),
+    host: str = os.environ.get("API_HOST")
+    
 
 configs = {
     "local" : LocalConfig(),
