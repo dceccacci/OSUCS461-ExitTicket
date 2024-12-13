@@ -1,19 +1,19 @@
 from dataclasses import dataclass
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 env = "prod"
 API_VERSION = 'v1'
-SERVER = 'osucapstone.com'
-FRONTEND = 'osucapstone.com'
+SERVER = 'ceccaccd.mysql.pythonanywhere-services.com
+FRONTEND = 'ceccaccd.pythonanywhere.com'
 
 @dataclass(repr=False)
 class BaseConfig:
     reload: bool = True
     use_colors: bool = True
-    port: int = int(os.environ.get("PORT"))
+    port: int = int(os.environ.get("API_PORT"))
 
 @dataclass
 class LocalConfig(BaseConfig):
@@ -25,7 +25,7 @@ class StagingConfig(BaseConfig):
 
 @dataclass
 class ProdConfig(BaseConfig):
-    host: str = "0.0.0.0"
+    host: str = os.environ.get("API_HOST"),
 
 configs = {
     "local" : LocalConfig(),
