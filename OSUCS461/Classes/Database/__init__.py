@@ -4,7 +4,7 @@ from OSUCS461.Models import UserCreate, UserPostCreate
 
 # ---- For testing ----
 import sys
-import sys
+import os
 
 # Function to log an error message to standard error
 def log_error(message):
