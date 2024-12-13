@@ -64,5 +64,9 @@ app.add_middleware(
 app.include_router(router)
 use_route_names_as_operation_ids(app)
 
+import os
+import sys
+log_error(**FASTAPI_CONFIG.__dict__))
+
 if __name__ == "__main__":
 	uvicorn.run("main:app", **FASTAPI_CONFIG.__dict__)
