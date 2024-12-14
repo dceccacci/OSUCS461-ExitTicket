@@ -13,7 +13,7 @@ FRONTEND = 'ceccaccd.pythonanywhere.com'
 class BaseConfig:
     reload: bool = True
     use_colors: bool = True
-    port: int = int(os.getenv("PORT", 8000))
+    port: int = int(os.getenv("PORT", 80))
 
 @dataclass
 class LocalConfig(BaseConfig):
